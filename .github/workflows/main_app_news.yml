@@ -5,6 +5,8 @@ name: Build and deploy Postech News Application
 
 on:
   push:
+    paths:
+      - 'PosTech.News/News.WebApplication/**'
     branches:
       - main
   workflow_dispatch:
