@@ -6,7 +6,11 @@ name: Build and deploy Postech News API
 on:
   push:
     paths:
-      - '!PosTech.News/News.WebApplication/**'
+      - '.github/**'
+      - 'DB/**'
+      - 'PosTech.News/News.ApplicationCore/**'
+      - 'PosTech.News/News.Security.JWT/**'
+      - 'PosTech.News/WebAPI/**'
     branches:
       - main
   workflow_dispatch:
