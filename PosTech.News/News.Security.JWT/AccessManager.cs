@@ -9,12 +9,12 @@ namespace News.Security.JWT
 {
     public class AccessManager
     {
-        private TokenConfigurations _tokenConfigurations;
-        private ApiSecurityDbContext _context;
+        private readonly TokenConfigurations _tokenConfigurations;
+        private readonly AppDbContext _context;
 
         public AccessManager(
             TokenConfigurations tokenConfigurations,
-            ApiSecurityDbContext context)
+            AppDbContext context)
         {
             _tokenConfigurations = tokenConfigurations;
             _context = context;

@@ -53,17 +53,10 @@ var configuration = builder.Configuration;
 configuration.AddJsonFile("appsettings.json");
 configuration.AddJsonFile("appsettings.Development.json");
 
-
-// acesso às tabelas da autenticação
-builder.Services.AddDbContext<ApiSecurityDbContext>(options =>
-{ 
-    options.UseSqlServer(configuration.GetConnectionString("DbUsersConnection"));
-});
-
 //Acesso tabelas aplicação
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
-    options.UseSqlServer(configuration.GetConnectionString("DbNoticiasConnection"));
+    options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
 });
 
 //Adiciona injeção de dependência para o Repository
