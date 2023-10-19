@@ -7,11 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{704F12BC-5F1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.WebAPI", "WebAPI\News.WebAPI.csproj", "{11DA73F7-82C9-432F-A2B0-573C00D34B5F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.Security.JWT", "News.Security.JWT\News.Security.JWT.csproj", "{E4BD269F-58CB-4F70-9022-2B47D93043E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.Security.JWT", "Security.JWT\News.Security.JWT.csproj", "{E4BD269F-58CB-4F70-9022-2B47D93043E1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.Domain", "News.ApplicationCore\News.Domain.csproj", "{A479DC4D-7642-4614-85DE-DEA158D08120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.Domain", "Domain\News.Domain.csproj", "{A479DC4D-7642-4614-85DE-DEA158D08120}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.WebApplication", "News.WebApplication\News.WebApplication.csproj", "{E1B7C717-3E8A-4E10-9C1B-56E92E52AC84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "News.WebApplication", "WebApplication\News.WebApplication.csproj", "{E1B7C717-3E8A-4E10-9C1B-56E92E52AC84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\News.ApplicationCore\News.Domain.csproj" />
-    <ProjectReference Include="..\News.Security.JWT\News.Security.JWT.csproj" />
+    <ProjectReference Include="..\Domain\News.Domain.csproj" />
+    <ProjectReference Include="..\Security.JWT\News.Security.JWT.csproj" />
   </ItemGroup>
 
 </Project>
