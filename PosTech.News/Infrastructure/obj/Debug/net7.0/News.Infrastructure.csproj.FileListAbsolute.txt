@@ -1,0 +1,11 @@
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\bin\Debug\net7.0\News.Infrastructure.deps.json
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\bin\Debug\net7.0\News.Infrastructure.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\bin\Debug\net7.0\News.Infrastructure.pdb
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.AssemblyInfoInputs.cache
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.AssemblyInfo.cs
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.csproj.CoreCompileInputs.cache
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\refint\News.Infrastructure.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\News.Infrastructure.pdb
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Infrastructure\obj\Debug\net7.0\ref\News.Infrastructure.dll

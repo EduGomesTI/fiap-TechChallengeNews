@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/eU4WaxOTk5GBszoVIOP1clabfQUn7JJkKgyx/8zPOtzEI/z3jCyFLXA/mKIXXz1F8OhkcbY565yNjQSUxQviA==",
+  "dgSpecHash": "aolf0OGcV4oLC7Sg8YyoMN4+wrDppVOuZCI612jRRhXMWjZMXOYM96R0riv12N5oIaPVFq0B0nfjF9NLRGOljg==",
   "success": true,
-  "projectFilePath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
+  "projectFilePath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dudol\\.nuget\\packages\\ardalis.specification\\6.1.0\\ardalis.specification.6.1.0.nupkg.sha512",
     "C:\\Users\\dudol\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.21\\microsoft.entityframeworkcore.6.0.21.nupkg.sha512",

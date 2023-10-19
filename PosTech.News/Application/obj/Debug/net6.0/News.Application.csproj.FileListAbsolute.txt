@@ -1,0 +1,11 @@
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\bin\Debug\net6.0\News.Application.deps.json
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\bin\Debug\net6.0\News.Application.dll
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\bin\Debug\net6.0\News.Application.pdb
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.GeneratedMSBuildEditorConfig.editorconfig
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.AssemblyInfoInputs.cache
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.AssemblyInfo.cs
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.csproj.CoreCompileInputs.cache
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.dll
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\refint\News.Application.dll
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\News.Application.pdb
+H:\Dotnet6\fiap-TechChallengeNews\PosTech.News\Application\obj\Debug\net6.0\ref\News.Application.dll

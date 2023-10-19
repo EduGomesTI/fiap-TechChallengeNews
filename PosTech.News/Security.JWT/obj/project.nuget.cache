@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZlkCyjfAlB3r60/nBEmA2P7veKn+wvECCuoJEb83YD6x2DmmgPoPxjrGpiWySQwU1dp0MU3m8NmFrgOScT1ySQ==",
+  "dgSpecHash": "rOedj7BTiMOLYI3immulySDAeK1BNbwWWNzVB59k/25npE/3TZp0kCnqsA44WJoG9tqmcMPVSrf2Xrf+4x2/Zw==",
   "success": true,
-  "projectFilePath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
+  "projectFilePath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dudol\\.nuget\\packages\\ardalis.specification\\6.1.0\\ardalis.specification.6.1.0.nupkg.sha512",
     "C:\\Users\\dudol\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",

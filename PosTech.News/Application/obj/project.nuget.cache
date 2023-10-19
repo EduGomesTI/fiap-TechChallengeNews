@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GCch65+9bxBMrLiOrHbjicd73ywXEmSbiCWdsHatSbDHwntR9+v01JM53AoK9BPocfoUDNLDMVudTLa68mGnAQ==",
+  "dgSpecHash": "mYSGTCLJxNL2CByrbQfo6xvIDth4yenLunTlz/Mw6CqBd2jJ4XahrsIRja7w2R41TojRY60CJxYjRsK509pLbQ==",
   "success": true,
-  "projectFilePath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Application\\News.Application.csproj",
+  "projectFilePath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Application\\News.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

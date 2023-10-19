@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {
+    "net7.0": {
       "Ardalis.Specification/6.1.0": {
         "type": "package",
         "compile": {
@@ -405,7 +405,7 @@
       },
       "News.Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
+        "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Ardalis.Specification": "6.1.0",
           "Microsoft.EntityFrameworkCore": "6.0.21"
@@ -1025,7 +1025,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net6.0": [
+    "net7.0": [
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 6.0.21",
       "Microsoft.EntityFrameworkCore >= 6.0.21",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0",
@@ -1039,11 +1039,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
+      "projectUniqueName": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
       "projectName": "News.Security.JWT",
-      "projectPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
+      "projectPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\News.Security.JWT.csproj",
       "packagesPath": "C:\\Users\\dudol\\.nuget\\packages\\",
-      "outputPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\obj\\",
+      "outputPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Security.JWT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1054,7 +1054,7 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0"
+        "net7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -1062,11 +1062,11 @@
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "projectReferences": {
-            "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
-              "projectPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj"
+            "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
+              "projectPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj"
             }
           }
         }
@@ -1078,8 +1078,8 @@
       }
     },
     "frameworks": {
-      "net6.0": {
-        "targetAlias": "net6.0",
+      "net7.0": {
+        "targetAlias": "net7.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
@@ -1110,7 +1110,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }

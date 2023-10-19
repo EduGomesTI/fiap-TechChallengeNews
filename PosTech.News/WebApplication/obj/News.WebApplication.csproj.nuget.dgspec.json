@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj": {}
+    "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj": {}
   },
   "projects": {
-    "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
+    "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj",
+        "projectUniqueName": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj",
         "projectName": "News.Domain",
-        "projectPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj",
+        "projectPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj",
         "packagesPath": "C:\\Users\\dudol\\.nuget\\packages\\",
-        "outputPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\obj\\",
+        "outputPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,7 +22,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -30,8 +30,8 @@
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {}
           }
         },
@@ -42,8 +42,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "dependencies": {
             "Ardalis.Specification": {
               "target": "Package",
@@ -70,18 +70,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj": {
+    "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
+        "projectUniqueName": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
         "projectName": "News.WebApplication",
-        "projectPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
+        "projectPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\News.WebApplication.csproj",
         "packagesPath": "C:\\Users\\dudol\\.nuget\\packages\\",
-        "outputPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\obj\\",
+        "outputPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\WebApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -92,19 +92,20 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0"
+          "net7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
+          "net7.0": {
+            "targetAlias": "net7.0",
             "projectReferences": {
-              "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
-                "projectPath": "H:\\Dotnet6\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj"
+              "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj": {
+                "projectPath": "H:\\Dotnet7\\fiap-TechChallengeNews\\PosTech.News\\Domain\\News.Domain.csproj"
               }
             }
           }
@@ -116,8 +117,8 @@
         }
       },
       "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
+        "net7.0": {
+          "targetAlias": "net7.0",
           "imports": [
             "net461",
             "net462",
@@ -137,7 +138,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.412\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

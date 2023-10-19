@@ -1,0 +1,15 @@
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\bin\Debug\net7.0\News.Security.JWT.deps.json
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\bin\Debug\net7.0\News.Security.JWT.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\bin\Debug\net7.0\News.Security.JWT.pdb
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\bin\Debug\net7.0\News.Domain.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\bin\Debug\net7.0\News.Domain.pdb
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.csproj.AssemblyReference.cache
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.GeneratedMSBuildEditorConfig.editorconfig
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.AssemblyInfoInputs.cache
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.AssemblyInfo.cs
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.csproj.CoreCompileInputs.cache
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.csproj.CopyComplete
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\refint\News.Security.JWT.dll
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\News.Security.JWT.pdb
+H:\Dotnet7\fiap-TechChallengeNews\PosTech.News\Security.JWT\obj\Debug\net7.0\ref\News.Security.JWT.dll
