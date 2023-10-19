@@ -1,12 +1,7 @@
-﻿using News.ApplicationCore.Data;
-using News.ApplicationCore.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using News.Domain.Data;
+using News.Domain.Entities;
 
-namespace News.ApplicationCore.Repositories
+namespace News.Domain.Repositories
 {
     public class NoticiasRepository : GenericRepository<Noticia>, INoticiasRepository
     {

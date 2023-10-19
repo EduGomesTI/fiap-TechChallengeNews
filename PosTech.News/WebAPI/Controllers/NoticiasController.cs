@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using News.ApplicationCore.Entities;
-using News.ApplicationCore.Repositories;
+using News.Domain.Entities;
+using News.Domain.Repositories;
 
 namespace News.WebAPI.Controllers
 {

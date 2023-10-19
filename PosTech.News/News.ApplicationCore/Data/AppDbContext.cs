@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using News.ApplicationCore.Entities;
+using News.Domain.Entities;
 
-namespace News.ApplicationCore.Data
+namespace News.Domain.Data
 {
     public class AppDbContext : DbContext
     {

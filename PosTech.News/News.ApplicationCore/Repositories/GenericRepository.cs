@@ -1,26 +1,22 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using News.ApplicationCore.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using News.Domain.Data;
 
-namespace News.ApplicationCore.Repositories
+namespace News.Domain.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-
         private AppDbContext context;
 
         public GenericRepository(AppDbContext _context)
         {
-            this.context = _context;
+            context = _context;
         }
+
         public async Task<IEnumerable<T>> GetAll()
         {
             return await context.Set<T>().AsNoTracking().ToListAsync();
         }
+
         public async Task<T> GetById(int id)
         {
             return await context.Set<T>().FindAsync(id);
@@ -31,11 +27,13 @@ namespace News.ApplicationCore.Repositories
             await context.Set<T>().AddAsync(obj);
             await context.SaveChangesAsync();
         }
+
         public async Task Update(int id, T obj)
         {
             context.Set<T>().Update(obj);
             await context.SaveChangesAsync();
         }
+
         public async Task Delete(int id)
         {
             var entity = await GetById(id);

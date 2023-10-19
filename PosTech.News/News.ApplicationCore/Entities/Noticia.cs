@@ -1,4 +1,4 @@
-﻿namespace News.ApplicationCore.Entities
+﻿namespace News.Domain.Entities
 {
     //Create doc
     public class Noticia

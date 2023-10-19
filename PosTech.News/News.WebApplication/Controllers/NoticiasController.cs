@@ -4,7 +4,7 @@ using News.WebApplication.Models;
 using News.WebApplication.Support;
 using System.Net.Http.Headers;
 using System.Net.Http;
-using News.ApplicationCore.Entities;
+using News.Domain.Entities;
 
 namespace News.WebApplication.Controllers
 {

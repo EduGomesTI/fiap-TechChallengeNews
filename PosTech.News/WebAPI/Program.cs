@@ -4,8 +4,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using News.ApplicationCore.Data;
-using News.ApplicationCore.Repositories;
+using News.Domain.Data;
+using News.Domain.Repositories;
 using News.Security.JWT;
 using System.Text;
 

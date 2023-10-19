@@ -1,8 +1,8 @@
-﻿using News.ApplicationCore.Entities;
+﻿using News.Domain.Entities;
 
-namespace News.ApplicationCore.Repositories
+namespace News.Domain.Repositories
 {
     public interface INoticiasRepository : IGenericRepository<Noticia>
-    { 
+    {
     }
 }

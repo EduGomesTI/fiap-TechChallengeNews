@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using News.ApplicationCore.Entities;
+using News.Domain.Entities;
 using News.Security.JWT;
 using System.Net;
 
