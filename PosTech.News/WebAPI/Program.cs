@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using News.Security.JWT;
 using News.Infrastructure;
 using News.Infrastructure.Options;
+using News.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -50,7 +51,9 @@ configuration.AddJsonFile("appsettings.Development.json");
 
 builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
 
-builder.Services.AddInfrastructure();
+builder.Services
+    .AddApplication()
+    .AddInfrastructure();
 
 //Adiciona configurações do token
 var tokenConfigurations = new TokenConfigurations();

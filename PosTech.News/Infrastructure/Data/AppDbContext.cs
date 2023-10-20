@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using News.Application.Abstractions;
 using News.Domain.Entities;
 
 namespace News.Infrastructure.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : DbContext, IUnitOfWork
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
