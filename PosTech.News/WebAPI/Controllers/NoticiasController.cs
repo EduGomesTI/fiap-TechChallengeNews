@@ -20,7 +20,7 @@ namespace News.WebAPI.Controllers
         [HttpGet()]
         public async Task<ActionResult<IEnumerable<Noticia>>> GetNoticias()
         {
-            var Noticias = await repository.GetAll();
+            var Noticias = await repository.GetAllAsync();
 
             if (Noticias == null)
             {
@@ -33,7 +33,7 @@ namespace News.WebAPI.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Noticia>> GetNoticia(int id)
         {
-            var Noticia = await repository.GetById(id);
+            var Noticia = await repository.GetByIdAsync(id);
 
             if (Noticia == null)
             {
@@ -51,7 +51,7 @@ namespace News.WebAPI.Controllers
                 return BadRequest("Dados inválidos");
             }
 
-            await repository.Insert(Noticia);
+            await repository.InsertAsync(Noticia);
 
             return CreatedAtAction(nameof(GetNoticia), new { Id = Noticia.Id }, Noticia);
         }
@@ -66,7 +66,7 @@ namespace News.WebAPI.Controllers
 
             try
             {
-                await repository.Update(id, Noticia);
+                await repository.UpdateAsync(id, Noticia);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -78,13 +78,13 @@ namespace News.WebAPI.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Noticia>> DeleteNoticia(int id)
         {
-            var Noticia = await repository.GetById(id);
+            var Noticia = await repository.GetByIdAsync(id);
             if (Noticia == null)
             {
                 return NotFound($"Notícia com Id {id} não foi encontrada");
             }
 
-            await repository.Delete(id);
+            await repository.DeleteAsync(id);
 
             return Ok(Noticia);
         }

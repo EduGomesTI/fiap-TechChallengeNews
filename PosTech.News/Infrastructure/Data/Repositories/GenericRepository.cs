@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using News.Domain.Data;
+using News.Domain.Repositories;
 
-namespace News.Domain.Repositories
+namespace News.Infrastructure.Data.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
@@ -12,31 +12,31 @@ namespace News.Domain.Repositories
             context = _context;
         }
 
-        public async Task<IEnumerable<T>> GetAll()
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
             return await context.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public async Task<T> GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
             return await context.Set<T>().FindAsync(id);
         }
 
-        public async Task Insert(T obj)
+        public async Task InsertAsync(T obj)
         {
             await context.Set<T>().AddAsync(obj);
             await context.SaveChangesAsync();
         }
 
-        public async Task Update(int id, T obj)
+        public async Task UpdateAsync(int id, T obj)
         {
             context.Set<T>().Update(obj);
             await context.SaveChangesAsync();
         }
 
-        public async Task Delete(int id)
+        public async Task DeleteAsync(int id)
         {
-            var entity = await GetById(id);
+            var entity = await GetByIdAsync(id);
             context.Set<T>().Remove(entity);
             await context.SaveChangesAsync();
         }

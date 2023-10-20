@@ -1,13 +1,8 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
-using News.Domain.Data;
-using News.Domain.Repositories;
 using News.Security.JWT;
-using System.Text;
+using News.Infrastructure;
+using News.Infrastructure.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,14 +48,9 @@ var configuration = builder.Configuration;
 configuration.AddJsonFile("appsettings.json");
 configuration.AddJsonFile("appsettings.Development.json");
 
-//Acesso tabelas aplicação
-builder.Services.AddDbContext<AppDbContext>(options =>
-{
-    options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
-});
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
 
-//Adiciona injeção de dependência para o Repository
-builder.Services.AddScoped<INoticiasRepository, NoticiasRepository>();
+builder.Services.AddInfrastructure();
 
 //Adiciona configurações do token
 var tokenConfigurations = new TokenConfigurations();

@@ -1,6 +1,5 @@
 ﻿namespace News.Domain.Entities
 {
-    //Create doc
     public class Noticia
     {
         public int Id { get; set; }

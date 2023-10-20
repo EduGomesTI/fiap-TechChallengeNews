@@ -1,7 +1,7 @@
-﻿using News.Domain.Data;
-using News.Domain.Entities;
+﻿using News.Domain.Entities;
+using News.Domain.Repositories;
 
-namespace News.Domain.Repositories
+namespace News.Infrastructure.Data.Repositories
 {
     public class NoticiasRepository : GenericRepository<Noticia>, INoticiasRepository
     {

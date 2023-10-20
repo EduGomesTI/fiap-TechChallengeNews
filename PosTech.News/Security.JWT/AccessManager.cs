@@ -1,6 +1,6 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using News.Domain.Data;
 using News.Domain.Entities;
+using News.Infrastructure.Data;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;

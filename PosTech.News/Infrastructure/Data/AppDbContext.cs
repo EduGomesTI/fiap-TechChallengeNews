@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using News.Domain.Entities;
 
-namespace News.Domain.Data
+namespace News.Infrastructure.Data
 {
     public class AppDbContext : DbContext
     {
@@ -11,10 +11,12 @@ namespace News.Domain.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+
             base.OnModelCreating(modelBuilder);
         }
 
-        public DbSet<Noticia> Noticia { get; set; }
-        public DbSet<User> User { get; set; }
+        public virtual DbSet<Noticia> Noticia { get; set; }
+        public virtual DbSet<User> User { get; set; }
     }
 }
