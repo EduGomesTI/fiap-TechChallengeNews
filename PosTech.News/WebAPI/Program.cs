@@ -44,16 +44,11 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Configurando o uso da ConfigurationManager
-var configuration = builder.Configuration;
-configuration.AddJsonFile("appsettings.json");
-configuration.AddJsonFile("appsettings.Development.json");
-
-builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
-
-builder.Services
-    .AddApplication()
-    .AddInfrastructure();
+builder.Configuration.AddAzureAppConfiguration(options =>
+{
+    options.Connect("Endpoint=https://appcs-fiap.azconfig.io;Id=OcrV;Secret=o9AEG3GKCnORObSMDVYrDSHxKTSD9WvKmIJGVFQTHUo=")
+    .Select("*");
+});
 
 //Adiciona configurações do token
 var tokenConfigurations = new TokenConfigurations();
@@ -61,12 +56,19 @@ new ConfigureFromConfigurationOptions<TokenConfigurations>(
     builder.Configuration.GetSection("TokenConfigurations"))
         .Configure(tokenConfigurations);
 
+//Adiciona configurações do Banco de dados
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+
 // Aciona a extensão que irá configurar o uso de
 // autenticação e autorização via tokens
 builder.Services.AddJwtSecurity(tokenConfigurations);
 
 // configure DI for application services
 //builder.Services.AddScoped<IUserService, UserService>();
+
+builder.Services
+    .AddApplication()
+    .AddInfrastructure();
 
 var app = builder.Build();
 
