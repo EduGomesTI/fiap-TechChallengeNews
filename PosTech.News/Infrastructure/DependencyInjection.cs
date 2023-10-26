@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using News.Application.Abstractions;
 using News.Domain.Repositories;
 using News.Infrastructure.Data;
 using News.Infrastructure.Data.Repositories;
@@ -28,7 +29,9 @@ namespace News.Infrastructure
                 dbContextOptionsBuilder.EnableDetailedErrors(databaseOptions.EnabledDetailedErrors);
             });
 
-            services.AddScoped<INoticiasRepository, NoticiasRepository>();
+            services.AddScoped<INewsRepository, NoticiasRepository>();
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             return services;
         }

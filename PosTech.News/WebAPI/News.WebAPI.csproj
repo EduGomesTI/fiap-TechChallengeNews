@@ -8,12 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.12" />
+    <PackageReference Include="Microsoft.Azure.AppConfiguration.AspNetCore" Version="6.1.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Application\News.Application.csproj" />
-    <ProjectReference Include="..\Domain\News.Domain.csproj" />
     <ProjectReference Include="..\Infrastructure\News.Infrastructure.csproj" />
     <ProjectReference Include="..\Security.JWT\News.Security.JWT.csproj" />
   </ItemGroup>

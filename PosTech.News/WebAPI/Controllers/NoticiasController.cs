@@ -1,7 +1,8 @@
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using News.Domain.Entities;
+using News.Application.News.Commands;
+using News.Application.News.Queries;
 using News.Domain.Repositories;
 
 namespace News.WebAPI.Controllers
@@ -11,16 +12,19 @@ namespace News.WebAPI.Controllers
     [Authorize]
     public class NoticiasController : ControllerBase
     {
-        private readonly INoticiasRepository repository;
-        public NoticiasController(INoticiasRepository noticiasRepository)
+        private readonly INewsRepository repository;
+        private readonly ISender _sender;
+
+        public NoticiasController(INewsRepository noticiasRepository, ISender sender)
         {
             repository = noticiasRepository;
+            _sender = sender;
         }
-        
+
         [HttpGet()]
-        public async Task<ActionResult<IEnumerable<Noticia>>> GetNoticias()
+        public async Task<IActionResult> GetNoticias(CancellationToken cancellationToken)
         {
-            var Noticias = await repository.GetAllAsync();
+            var Noticias = await _sender.Send(new GetAllNewsQuery(), cancellationToken);
 
             if (Noticias == null)
             {
@@ -29,11 +33,11 @@ namespace News.WebAPI.Controllers
 
             return Ok(Noticias.ToList());
         }
-        
+
         [HttpGet("{id}")]
-        public async Task<ActionResult<Noticia>> GetNoticia(int id)
+        public async Task<IActionResult> GetNoticia(int id, CancellationToken cancellationToken)
         {
-            var Noticia = await repository.GetByIdAsync(id);
+            var Noticia = await _sender.Send(new GetNewsByIdQuery(id), cancellationToken);
 
             if (Noticia == null)
             {
@@ -44,50 +48,42 @@ namespace News.WebAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> PostNoticia([FromBody] Noticia Noticia)
+        public async Task<IActionResult> PostNoticia([FromBody] AddNewsCommand request, CancellationToken cancellationToken)
         {
-            if (Noticia == null)
+            if (request == null)
             {
                 return BadRequest("Dados inválidos");
             }
 
-            await repository.InsertAsync(Noticia);
+            var result = await _sender.Send(request, cancellationToken);
 
-            return CreatedAtAction(nameof(GetNoticia), new { Id = Noticia.Id }, Noticia);
+            return CreatedAtAction(nameof(PostNoticia), result.Messages);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutNoticia(int id, Noticia Noticia)
+        [HttpPut()]
+        public async Task<IActionResult> PutNoticia([FromBody] UpdateNewsCommand request, CancellationToken cancellationToken)
         {
-            if (id != Noticia.Id)
+            if (request == null)
             {
-                return BadRequest($"O código da Notícia {id} não confere");
+                return BadRequest("Dados inválidos");
             }
 
-            try
-            {
-                await repository.UpdateAsync(id, Noticia);
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                throw;
-            }
-            return Ok("Atualização da Notícia realizada com sucesso");
+            var result = await _sender.Send(request, cancellationToken);
+
+            return Ok(result.Messages);
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Noticia>> DeleteNoticia(int id)
+        public async Task<IActionResult> DeleteNoticia(int id)
         {
-            var Noticia = await repository.GetByIdAsync(id);
-            if (Noticia == null)
+            if (id == 0)
             {
-                return NotFound($"Notícia com Id {id} não foi encontrada");
+                return BadRequest("Id inválido.");
             }
 
-            await repository.DeleteAsync(id);
+            var result = await _sender.Send(new DeleteNewsCommand(id));
 
-            return Ok(Noticia);
+            return Ok(result);
         }
-
     }
 }

@@ -17,7 +17,7 @@ namespace News.Infrastructure.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public virtual DbSet<Noticia> Noticia { get; set; }
+        public virtual DbSet<Domain.Entities.Noticia> Noticia { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

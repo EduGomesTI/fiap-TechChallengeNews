@@ -8,8 +8,8 @@
 
         Task InsertAsync(T obj);
 
-        Task UpdateAsync(int id, T obj);
+        Task UpdateAsync(T obj);
 
-        Task DeleteAsync(int id);
+        Task DeleteAsync(T obj);
     }
 }

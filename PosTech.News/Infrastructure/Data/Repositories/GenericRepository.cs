@@ -25,20 +25,16 @@ namespace News.Infrastructure.Data.Repositories
         public async Task InsertAsync(T obj)
         {
             await context.Set<T>().AddAsync(obj);
-            await context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(int id, T obj)
+        public async Task UpdateAsync(T obj)
         {
             context.Set<T>().Update(obj);
-            await context.SaveChangesAsync();
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(T obj)
         {
-            var entity = await GetByIdAsync(id);
-            context.Set<T>().Remove(entity);
-            await context.SaveChangesAsync();
+            context.Set<T>().Remove(obj);
         }
     }
 }

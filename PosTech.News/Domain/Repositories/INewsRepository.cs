@@ -2,7 +2,7 @@
 
 namespace News.Domain.Repositories
 {
-    public interface INoticiasRepository : IGenericRepository<Noticia>
+    public interface INewsRepository : IGenericRepository<Entities.Noticia>
     {
     }
 }
