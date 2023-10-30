@@ -23,6 +23,22 @@ namespace News.Application.News.Commands
         {
             //TODO: validar request
 
+            UpdateNewsResponse result = new();
+
+            if (request is null)
+            {
+                result.AddMessage("A requisição não pode ser nula.");
+
+                return result;
+            }
+
+            if (request.Id == 0)
+            {
+                result.AddMessage("O Id da notícia não pode ser nulo.");
+
+                return result;
+            }
+
             _logger.LogInformation("Atualiza uma notícia.");
             Noticia noticia = new()
             {
@@ -36,8 +52,6 @@ namespace News.Application.News.Commands
             await _repository.UpdateAsync(noticia);
 
             var returnOfSaveChanges = await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-            UpdateNewsResponse result = new();
 
             if (returnOfSaveChanges == 0)
             {
