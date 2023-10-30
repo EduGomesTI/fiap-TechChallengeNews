@@ -66,6 +66,8 @@ builder.Services.AddJwtSecurity(tokenConfigurations);
 // configure DI for application services
 //builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddApplicationInsightsTelemetry();
+
 builder.Services
     .AddApplication()
     .AddInfrastructure();
