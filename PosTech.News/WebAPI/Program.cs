@@ -4,6 +4,9 @@ using News.Security.JWT;
 using News.Infrastructure;
 using News.Infrastructure.Options;
 using News.Application;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using System.Text.Json;
+using System.Net.Mime;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -66,6 +69,8 @@ builder.Services.AddJwtSecurity(tokenConfigurations);
 // configure DI for application services
 //builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddHealthChecks();
+
 builder.Services.AddApplicationInsightsTelemetry();
 
 builder.Services
@@ -74,8 +79,31 @@ builder.Services
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
 app.UseSwagger();
 app.UseSwaggerUI();
+
+app.UseHealthChecks("/status-text");
+app.UseHealthChecks("/status-json",
+    new HealthCheckOptions()
+    {
+        ResponseWriter = async (context, report) =>
+        {
+            var result = JsonSerializer.Serialize(
+                            new
+                            {
+                                currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+                                statusApplication = report.Status.ToString(),
+                            });
+
+            context.Response.ContentType = MediaTypeNames.Application.Json;
+            await context.Response.WriteAsync(result);
+        }
+    });
 
 app.UseHttpsRedirection();
 
