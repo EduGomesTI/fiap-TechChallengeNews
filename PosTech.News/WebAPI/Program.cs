@@ -47,12 +47,6 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Configuration.AddAzureAppConfiguration(options =>
-{
-    options.Connect("Endpoint=https://appcs-fiap.azconfig.io;Id=OcrV;Secret=o9AEG3GKCnORObSMDVYrDSHxKTSD9WvKmIJGVFQTHUo=")
-    .Select("*");
-});
-
 //Adiciona configurações do token
 var tokenConfigurations = new TokenConfigurations();
 new ConfigureFromConfigurationOptions<TokenConfigurations>(
