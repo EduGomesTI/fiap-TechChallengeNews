@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace News.WebApplication
+namespace News.WebApplication.Extensions
 {
     public static class HttpContentExtensions
     {

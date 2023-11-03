@@ -5,6 +5,7 @@ using News.WebApplication.Support;
 using System.Net.Http.Headers;
 using System.Net.Http;
 using News.Domain.Entities;
+using News.WebApplication.Extensions;
 
 namespace News.WebApplication.Controllers
 {
