@@ -6,7 +6,7 @@ using News.Domain.Repositories;
 
 namespace News.Application.News.Commands
 {
-    internal sealed class AddNewsCommandHandler : IRequestHandler<AddNewsCommand, AddNewsResponse>
+    public sealed class AddNewsCommandHandler : IRequestHandler<AddNewsCommand, AddNewsResponse>
     {
         private readonly ILogger<AddNewsCommandHandler> _logger;
         private readonly INewsRepository _repository;
@@ -28,6 +28,20 @@ namespace News.Application.News.Commands
             if (request is null)
             {
                 result.AddMessage("A requisição não pode ser nula.");
+
+                return result;
+            }
+
+            if (request.Titulo.Length == 0)
+            {
+                result.AddMessage("O título não pode ser vazio.");
+
+                return result;
+            }
+
+            if (request.Autor.Length == 0)
+            {
+                result.AddMessage("O autor não pode ser vazio.");
 
                 return result;
             }

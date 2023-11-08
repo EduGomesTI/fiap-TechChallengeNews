@@ -22,11 +22,15 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'
-          include-prerelease: true
+          dotnet-version: |
+            6.x
+            7.x
 
       - name: Restore
         run: dotnet restore ${{ vars.WEB_API_ROOT }}

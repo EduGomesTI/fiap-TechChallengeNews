@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Security.JWT\News.Security.JWT.csproj" />
   </ItemGroup>
 
+	<ItemGroup>
+		<InternalsVisibleTo Include="IntegrationTests" />
+	</ItemGroup>
+
 </Project>

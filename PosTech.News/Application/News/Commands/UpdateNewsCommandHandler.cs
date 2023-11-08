@@ -6,7 +6,7 @@ using News.Domain.Repositories;
 
 namespace News.Application.News.Commands
 {
-    internal sealed class UpdateNewsCommandHandler : IRequestHandler<UpdateNewsCommand, UpdateNewsResponse>
+    public sealed class UpdateNewsCommandHandler : IRequestHandler<UpdateNewsCommand, UpdateNewsResponse>
     {
         private readonly ILogger<UpdateNewsCommandHandler> _logger;
         private readonly INewsRepository _repository;
