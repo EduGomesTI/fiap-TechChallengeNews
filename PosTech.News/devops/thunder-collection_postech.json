@@ -1,0 +1,397 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "postech",
+    "dateExported": "2023-11-08T19:25:24.373Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "localhost",
+            "containerId": "",
+            "created": "2023-10-19T19:46:24.352Z",
+            "sortNum": 20000,
+            "settings": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": "{{token-local}}"
+                }
+            }
+        },
+        {
+            "_id": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure",
+            "containerId": "",
+            "created": "2023-11-02T21:00:10.385Z",
+            "sortNum": 30000,
+            "settings": {
+                "auth": {
+                    "type": "bearer",
+                    "bearer": "{{token-azure}}"
+                },
+                "preReq": {
+                    "runRequests": [
+                        {
+                            "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                            "triggerCondition": "run-always",
+                            "triggerValue": ""
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "requests": [
+        {
+            "_id": "cbd3dd51-9201-4193-8292-8b1c9ba4310b",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Login",
+            "url": "https://localhost:7147/api/Login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-10-19T19:47:44.739Z",
+            "modified": "2023-10-19T19:51:39.395Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"usuario_fiap\",\n  \"password\": \"senha_fiap\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.accessToken",
+                    "action": "setto",
+                    "value": "{{token-local}}"
+                }
+            ]
+        },
+        {
+            "_id": "3b04cdb8-80a8-4386-b2b7-f571ae81e9da",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Health Check Json",
+            "url": "https://postech-fiap.azurewebsites.net/status-json",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-02T21:00:17.874Z",
+            "modified": "2023-11-02T21:01:14.181Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Login",
+            "url": "https://postech-fiap.azurewebsites.net/api/Login",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-11-03T12:48:40.975Z",
+            "modified": "2023-11-03T13:15:54.059Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"username\": \"usuario_fiap\",\n  \"password\": \"senha_fiap\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.accessToken",
+                    "action": "setto",
+                    "value": "{{token-azure}}"
+                }
+            ]
+        },
+        {
+            "_id": "63ffe779-b953-453d-be4e-dc1e976c5798",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Get All News",
+            "url": "https://localhost:7147/api/noticias",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-10-19T19:47:50.333Z",
+            "modified": "2023-11-02T20:21:46.877Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "cbd3dd51-9201-4193-8292-8b1c9ba4310b",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "fffa0266-e868-41b3-95d3-b58ecd6e9c2c",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Health Check Text",
+            "url": "https://postech-fiap.azurewebsites.net/status-text",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-02T21:00:28.059Z",
+            "modified": "2023-11-02T21:01:27.893Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6313da97-c0cd-4ee7-a05f-34d7a869786b",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Health Check Text",
+            "url": "https://localhost:7147/status-text",
+            "method": "GET",
+            "sortNum": 22500,
+            "created": "2023-11-02T20:22:30.066Z",
+            "modified": "2023-11-02T20:48:26.771Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c9ffb556-2d36-43cb-ad91-aa4e3675bc04",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Health Check Json",
+            "url": "https://localhost:7147/status-json",
+            "method": "GET",
+            "sortNum": 23750,
+            "created": "2023-11-02T20:23:26.109Z",
+            "modified": "2023-11-02T20:48:35.167Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7b0c5ff0-fdb7-4e55-92dd-41168e1c0675",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Get News By Id",
+            "url": "https://localhost:7147/api/noticias/5",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2023-10-22T19:03:23.849Z",
+            "modified": "2023-11-02T20:51:15.089Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "cbd3dd51-9201-4193-8292-8b1c9ba4310b",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "59cae493-125a-4531-b30d-910642c9be45",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Delete News",
+            "url": "https://localhost:7147/api/noticias/7",
+            "method": "DELETE",
+            "sortNum": 27500,
+            "created": "2023-10-23T19:31:28.245Z",
+            "modified": "2023-10-23T19:35:03.513Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "b0d16a9e-7ffb-4464-9828-a6be1249a2e6",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "b0be9fa5-971b-4b92-81eb-c7473a219ea5",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Add News",
+            "url": "https://localhost:7147/api/noticias",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-10-19T19:47:54.777Z",
+            "modified": "2023-10-23T19:34:13.618Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Primeira notícia\",\n  \"descricao\": \"Descrição da Primeira notícia\",\n  \"dataPublicacao\": \"2023-10-22T20:19:50.568Z\",\n  \"autor\": \"Eduardo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e2c962ba-6011-4ea2-879b-0e1b9979f7a1",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Get All News",
+            "url": "https://postech-fiap.azurewebsites.net/api/noticias",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-11-03T13:16:23.376Z",
+            "modified": "2023-11-03T13:17:09.514Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "d828087f-04b5-4a26-be7f-0c84fefa93b3",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Delete News",
+            "url": "https://postech-fiap.azurewebsites.net/api/noticias/7",
+            "method": "DELETE",
+            "sortNum": 35000,
+            "created": "2023-11-08T19:20:21.497Z",
+            "modified": "2023-11-08T19:22:07.872Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "50766e07-6489-46a3-8004-0603e841fce1",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Add News",
+            "url": "https://postech-fiap.azurewebsites.net/api/noticias",
+            "method": "POST",
+            "sortNum": 37500,
+            "created": "2023-11-08T19:20:26.971Z",
+            "modified": "2023-11-08T19:23:17.578Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"titulo\": \"Primeira notícia\",\n  \"descricao\": \"Descrição da Primeira notícia\",\n  \"dataPublicacao\": \"2023-10-22T20:19:50.568Z\",\n  \"autor\": \"Eduardo\"\n}",
+                "form": []
+            },
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "74c931cc-f13b-4e8a-bda2-ca845f51e9d6",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Update News",
+            "url": "https://postech-fiap.azurewebsites.net/api/noticias",
+            "method": "PUT",
+            "sortNum": 38750,
+            "created": "2023-11-08T19:20:32.851Z",
+            "modified": "2023-11-08T19:24:16.557Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 9,\n    \"titulo\": \"Primeira notícia\",\n    \"descricao\": \"Descrição da Primeira notícia\",\n    \"dataPublicacao\": \"2023-10-16T20:19:50.567\",\n    \"autor\": \"Eduardo\"\n}",
+                "form": []
+            },
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        },
+        {
+            "_id": "9a01ff6b-2160-4c38-810c-a254eba6db64",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "95c1c5a9-281e-4ae2-a964-a699669ff0f0",
+            "name": "Update News",
+            "url": "https://localhost:7147/api/noticias",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-10-23T19:11:33.259Z",
+            "modified": "2023-10-23T19:14:47.168Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"id\": 3,\n    \"titulo\": \"Primeira notícia\",\n    \"descricao\": \"Descrição da Primeira notícia\",\n    \"dataPublicacao\": \"2023-10-16T20:19:50.567\",\n    \"autor\": \"Eduardo\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "69c26127-be89-45d4-b2a6-16be20b6995f",
+            "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+            "containerId": "1658eee1-222e-4241-95e2-3ee84ba1a796",
+            "name": "Azure Get News By Id",
+            "url": "https://postech-fiap.azurewebsites.net/api/noticias/9",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2023-11-08T19:20:12.418Z",
+            "modified": "2023-11-08T19:25:00.021Z",
+            "headers": [],
+            "params": [],
+            "tests": [],
+            "preReq": {
+                "runRequests": [
+                    {
+                        "reqId": "1e1d99fc-1ff2-4a4b-bc18-6d93c5a06463",
+                        "colId": "e12e8664-4f58-4f65-954b-4ecc7a851f74",
+                        "triggerCondition": "run-always",
+                        "triggerValue": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "settings": {
+        "envId": "bfab8e7f-8c6b-4ae8-8caa-ff954ad01976"
+    }
+}

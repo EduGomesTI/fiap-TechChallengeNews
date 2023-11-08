@@ -9,7 +9,6 @@ namespace News.WebAPI.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]
     public class NoticiasController : ControllerBase
     {
         private readonly INewsRepository repository;

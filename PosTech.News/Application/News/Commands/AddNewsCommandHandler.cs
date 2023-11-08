@@ -6,7 +6,7 @@ using News.Domain.Repositories;
 
 namespace News.Application.News.Commands
 {
-    internal sealed class AddNewsCommandHandler : IRequestHandler<AddNewsCommand, AddNewsResponse>
+    public sealed class AddNewsCommandHandler : IRequestHandler<AddNewsCommand, AddNewsResponse>
     {
         private readonly ILogger<AddNewsCommandHandler> _logger;
         private readonly INewsRepository _repository;
@@ -23,6 +23,29 @@ namespace News.Application.News.Commands
         {
             //TODO: validar request
 
+            AddNewsResponse result = new();
+
+            if (request is null)
+            {
+                result.AddMessage("A requisição não pode ser nula.");
+
+                return result;
+            }
+
+            if (request.Titulo.Length == 0)
+            {
+                result.AddMessage("O título não pode ser vazio.");
+
+                return result;
+            }
+
+            if (request.Autor.Length == 0)
+            {
+                result.AddMessage("O autor não pode ser vazio.");
+
+                return result;
+            }
+
             _logger.LogInformation("Adiciona uma nova notícia.");
             Noticia noticia = new()
             {
@@ -35,8 +58,6 @@ namespace News.Application.News.Commands
             await _repository.InsertAsync(noticia);
 
             var returnOfSaveChanges = await _unitOfWork.SaveChangesAsync(cancellationToken);
-
-            AddNewsResponse result = new();
 
             if (returnOfSaveChanges == 0)
             {

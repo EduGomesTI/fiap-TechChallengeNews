@@ -5,7 +5,7 @@ using News.Domain.Repositories;
 
 namespace News.Application.News.Commands
 {
-    internal sealed class DeleteNewsCommandHandler : IRequestHandler<DeleteNewsCommand, DeleteNewsResponse>
+    public sealed class DeleteNewsCommandHandler : IRequestHandler<DeleteNewsCommand, DeleteNewsResponse>
     {
         private readonly ILogger<DeleteNewsCommandHandler> _logger;
         private readonly INewsRepository _repository;
