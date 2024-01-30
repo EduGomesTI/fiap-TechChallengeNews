@@ -2,9 +2,11 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using News.Application.Abstractions;
+using News.Domain.Messages;
 using News.Domain.Repositories;
 using News.Infrastructure.Data;
 using News.Infrastructure.Data.Repositories;
+using News.Infrastructure.Messages;
 using News.Infrastructure.Options;
 
 namespace News.Infrastructure
@@ -32,6 +34,8 @@ namespace News.Infrastructure
             services.AddScoped<INewsRepository, NoticiasRepository>();
 
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<IMessageService, MessageService>();
 
             return services;
         }

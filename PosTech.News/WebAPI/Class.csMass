@@ -1,0 +1,6 @@
+﻿namespace News.WebAPI
+{
+    public class Class
+    {
+    }
+}

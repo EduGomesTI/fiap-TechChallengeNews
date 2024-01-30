@@ -1,6 +1,4 @@
-﻿using News.Domain.Enuns;
-
-namespace News.Domain.Entities
+﻿namespace SendMail.Entities
 {
     public sealed record Noticia
     {

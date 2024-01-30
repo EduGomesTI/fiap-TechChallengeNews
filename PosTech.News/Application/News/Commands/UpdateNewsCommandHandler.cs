@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Logging;
 using News.Application.Abstractions;
 using News.Domain.Entities;
+using News.Domain.Enuns;
+using News.Domain.Messages;
 using News.Domain.Repositories;
 
 namespace News.Application.News.Commands
@@ -11,12 +13,14 @@ namespace News.Application.News.Commands
         private readonly ILogger<UpdateNewsCommandHandler> _logger;
         private readonly INewsRepository _repository;
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IMessageService _messageService;
 
-        public UpdateNewsCommandHandler(ILogger<UpdateNewsCommandHandler> logger, INewsRepository repository, IUnitOfWork unitOfWork)
+        public UpdateNewsCommandHandler(ILogger<UpdateNewsCommandHandler> logger, INewsRepository repository, IUnitOfWork unitOfWork, IMessageService messageService)
         {
             _logger = logger;
             _repository = repository;
             _unitOfWork = unitOfWork;
+            _messageService = messageService;
         }
 
         public async Task<UpdateNewsResponse> Handle(UpdateNewsCommand request, CancellationToken cancellationToken)
@@ -52,6 +56,8 @@ namespace News.Application.News.Commands
             await _repository.UpdateAsync(noticia);
 
             var returnOfSaveChanges = await _unitOfWork.SaveChangesAsync(cancellationToken);
+
+            await _messageService.SendAsync(noticia);
 
             if (returnOfSaveChanges == 0)
             {

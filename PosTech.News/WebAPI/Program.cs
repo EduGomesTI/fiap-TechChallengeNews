@@ -7,6 +7,7 @@ using News.Application;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using System.Text.Json;
 using System.Net.Mime;
+using MassTransit;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -53,12 +54,32 @@ new ConfigureFromConfigurationOptions<TokenConfigurations>(
     builder.Configuration.GetSection("TokenConfigurations"))
         .Configure(tokenConfigurations);
 
-//Adiciona configurações do Banco de dados
-builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
-
 // Aciona a extensão que irá configurar o uso de
 // autenticação e autorização via tokens
 builder.Services.AddJwtSecurity(tokenConfigurations);
+
+//Adiciona configurações do Banco de dados
+builder.Services.ConfigureOptions<DatabaseOptionsSetup>();
+
+//Adiciona configurações do Azure Service Bus
+builder.Services.ConfigureOptions<AzureServiceBusOptionsSetup>();
+
+//Adicina as configurações do RabbitMQ no MassTransit
+builder.Services.ConfigureOptions<MassTransitOptionsSetup>();
+
+builder.Services.AddMassTransit(x =>
+{
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        var options = context.GetRequiredService<IOptions<MassTransitOptions>>().Value;
+
+        cfg.Host(options.Server, "/", h =>
+        {
+            h.Username(options.User);
+            h.Password(options.Password);
+        });
+    });
+});
 
 // configure DI for application services
 //builder.Services.AddScoped<IUserService, UserService>();
