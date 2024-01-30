@@ -10,7 +10,7 @@ namespace SendEmail.Events
     {
         public Task Consume(ConsumeContext<Noticia> context)
         {
-            const string toEmail = "edugomesti@outlook.com";
+            const string toEmail = "enter email";
             var subject = context.Message.Titulo;
             var body = new StringBuilder();
             body.AppendLine($"Autor: {context.Message.Autor}");
@@ -26,8 +26,8 @@ namespace SendEmail.Events
 
         private static void SendEmail(string toEmail, string subject, string body)
         {
-            const string fromEmail = "dudolino@gmail.com";
-            const string fromPassword = "uhii akat ottg ddme";
+            const string fromEmail = "enter e-mail";
+            const string fromPassword = "enter password";
 
             var smtpClient = new SmtpClient
             {

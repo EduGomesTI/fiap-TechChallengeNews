@@ -81,3 +81,12 @@ https://postech-fiap.azurewebsites.net/status-json
 https://postech-fiap.azurewebsites.net/status-text
 
 Foram introduzido 2 health ckecks simples que retornam apenas o estado da API, sendo que para o banco de dados ainda não foi implementado.
+
+## Fase 4
+
+Obs.: Devido a utilização do RabbitMQ através de container não será possível executar o projeto através do Azure, somente localmente. Lembrando que a primeira vez que é enviado uma solicitação ao banco há um delay para a instância dele 'acordar' e isto pode causar erro de timeout. Repetindo a operação tudo fica normal.
+
+Comando para rodar o container do RabbitMQ:
+```
+docker run -d --hostname my-rabbit --name some-rabbit -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+```
